@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dp3"
+        android:clickable="true"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/movie_image"
+                        android:src="@drawable/zootopia"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/movie_image"
+                        android:orientation="vertical">
+
+                        <com.rharj.movievalley.custom.CustomTextViewMedium
+                            android:id="@+id/movie_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Zootopia"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            android:textColor="@android:color/black"/>
+
+                        <com.rharj.movievalley.custom.CustomTextViewLight
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="@color/app_grays"
+                            android:text="Animation | Action | Adventure"/>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_height="wrap_content">
+
+                            <com.rharj.movievalley.custom.CustomTextViewLight
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/movie_rating"
+                                android:layout_marginRight="10dp"
+                                android:textSize="15dp"
+                                android:textColor="@android:color/black"
+                                android:text="8.2/10"/>
+
+                            <com.rharj.movievalley.custom.CustomTextViewLight
+                                android:id="@+id/movie_3d"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_toRightOf="@id/movie_rating"
+                                android:background="@drawable/drawable_round_dark_pink"
+                                android:text="3D"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp" />
+
+                            <com.rharj.movievalley.custom.CustomTextViewLight
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2D"
+                                android:id="@+id/movie_2d"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_toRightOf="@id/movie_3d"
+                                android:textSize="10dp"
+                                android:textColor="@android:color/white"
+                                android:background="@drawable/drawable_round_grey"/>
+
+                            <com.rharj.movievalley.custom.CustomTextViewLight
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="EN"
+                                android:layout_marginTop="3dp"
+                                android:layout_toRightOf="@id/movie_2d"
+                                android:textSize="10sp"
+                                android:textColor="@android:color/white"
+                                android:background="@drawable/drawable_round_pink"/>
+
+                        </RelativeLayout>
+
+                        <com.rharj.movievalley.custom.CustomTextViewLight
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/movie_details"
+                            android:textColor="@color/app_grays"
+                            android:textSize="12sp"
+                            android:layout_marginTop="10dp"
+                            android:text="In a city of animals, a rockie bunny cop and a cynical con artist fox must work together to uncover a..."/>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <com.rharj.movievalley.custom.CustomTextViewLight
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="2dp"
+                                android:text="107 min"
+                                android:drawableLeft="@drawable/ic_baseline_access_time_24px"
+                                android:textSize="11sp"
+                                android:textColor="@color/app_grays"
+                                android:id="@+id/movie_time"
+                                android:layout_marginRight="15dp"/>
+
+                            <com.rharj.movievalley.custom.CustomTextViewLight
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="2dp"
+                                android:text="17 June 2016(USA)"
+                                android:drawableLeft="@drawable/ic_date_range_black_24dp"
+                                android:textSize="11sp"
+                                android:textColor="@color/app_grays"
+                                android:layout_toRightOf="@id/movie_time"
+                                android:id="@+id/movie_release_date"
+                                android:layout_marginRight="10dp"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+            </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

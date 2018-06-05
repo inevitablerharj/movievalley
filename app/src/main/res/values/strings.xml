@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MovieValley</string>
+    <string name="title_home">Now Showing</string>
+    <string name="title_dashboard">Coming Soon</string>
+    <string name="title_notifications">Cinemas</string>
+    <string name="title_profile">Profile</string>
+</resources>

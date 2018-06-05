@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F03369</color>
+    <color name="colorPrimaryDark">#9A165D</color>
+    <color name="colorAccent">#F03369</color>
+    <color name="colorSecondary">#EA2A60</color>
+    <color name="colorsprimary">#C31479</color>
+    <color name="darkappcolor">#9A165D</color>
+    <color name="lightappcolor">#F03369</color>
+    <color name="app_grays">#A2A2A2</color>
+</resources>

@@ -1,0 +1,65 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:background="#00000000"
+        app:elevation="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/custom_toolbar"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:id="@+id/toobarProgress"
+                android:layout_alignParentBottom="true"
+                style="@style/AppTheme">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.rharj.movievalley.custom.CustomTextViewRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Movie Valley"
+                        android:textColor="@android:color/white"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/sp15"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:padding="@dimen/dp10"
+                        android:layout_marginRight="@dimen/dp10"
+                        android:clickable="true"/>
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            android:background="?android:attr/windowBackground"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/navigation" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
