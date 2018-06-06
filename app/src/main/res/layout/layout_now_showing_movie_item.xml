@@ -45,6 +45,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
+                            android:id="@+id/movie_category"
+                            android:layout_marginTop="2dp"
                             android:textColor="@color/app_grays"
                             android:text="Animation | Action | Adventure"/>
 
@@ -90,6 +92,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="EN"
+                                android:id="@+id/movie_language"
                                 android:layout_marginTop="3dp"
                                 android:layout_toRightOf="@id/movie_2d"
                                 android:textSize="10sp"

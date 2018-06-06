@@ -1,6 +1,8 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray_background"
+    android:id="@+id/container"
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
@@ -23,13 +25,13 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <com.rharj.movievalley.custom.CustomTextViewRegular
+                    <com.rharj.movievalley.custom.CustomTextViewMedium
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Movie Valley"
                         android:textColor="@android:color/white"
                         android:layout_centerInParent="true"
-                        android:textSize="@dimen/sp15"/>
+                        android:textSize="20sp"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -44,22 +46,22 @@
 
         </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:id="@+id/fragment_container"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:layout_marginStart="0dp"
-            android:background="?android:attr/windowBackground"
-            android:layout_alignParentBottom="true"
-            app:menu="@menu/navigation" />
 
-    </RelativeLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        android:layout_gravity="bottom"
+        app:menu="@menu/navigation" />
 
 </android.support.design.widget.CoordinatorLayout>
 

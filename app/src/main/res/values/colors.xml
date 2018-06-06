@@ -8,4 +8,5 @@
     <color name="darkappcolor">#9A165D</color>
     <color name="lightappcolor">#F03369</color>
     <color name="app_grays">#A2A2A2</color>
+    <color name="gray_background">#E1E1E1</color>
 </resources>
