@@ -7,21 +7,14 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.rharj.movievalley.R;
-import com.rharj.movievalley.adapter.MovieListAdapter;
+import com.rharj.movievalley.fragment.ComingSoonFragment;
 import com.rharj.movievalley.fragment.NowShowingFragment;
-import com.rharj.movievalley.model.MovieListModel;
 import com.rharj.movievalley.utility.BottomNavigationBehaviour;
 import com.rharj.movievalley.utility.BottomNavigationViewHelper;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,11 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    loadFragment(NowShowingFragment.getInstance());
+                    fragment = new NowShowingFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_dashboard:
+                    fragment = new ComingSoonFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_notifications:
                     return true;
@@ -59,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 navigation.getLayoutParams();
         layoutParams.setBehavior(new BottomNavigationBehaviour());
 
-        loadFragment(NowShowingFragment.getInstance());
+        loadFragment(new NowShowingFragment());
 
     }
 

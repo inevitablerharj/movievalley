@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dp3"
+        android:clickable="true"
+        android:padding="15dp"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="5dp">
+        
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:src="@drawable/shape_of_water"
+                        android:scaleType="centerCrop"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:id="@+id/coming_soon_image"/>
+
+                    <com.rharj.movievalley.custom.CustomTextViewRegular
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Shape Of Water"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_below="@id/coming_soon_image"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/movie_title"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="3dp"/>
+
+                    <com.rharj.movievalley.custom.CustomTextViewLight
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Adventure| Action | Drama"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:singleLine="true"
+                        android:textSize="10sp"
+                        android:layout_below="@id/movie_title"
+                        android:textColor="@color/app_grays"
+                        android:id="@+id/movie_category"
+                        android:layout_marginBottom="10dp"/>
+            </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

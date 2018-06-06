@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         android:scrollbars="vertical"
-        android:id="@+id/movie_list"></android.support.v7.widget.RecyclerView>
+        android:id="@+id/movie_list_coming_soon"></android.support.v7.widget.RecyclerView>
 
 </android.support.v4.widget.NestedScrollView>

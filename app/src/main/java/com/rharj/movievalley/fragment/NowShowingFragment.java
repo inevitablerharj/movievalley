@@ -23,10 +23,6 @@ public class NowShowingFragment extends Fragment {
     MovieListAdapter movieListAdapter;
     List<MovieListModel> movieListModelList = new ArrayList<>();
 
-    public static NowShowingFragment getInstance() {
-        return new NowShowingFragment();
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -47,7 +43,9 @@ public class NowShowingFragment extends Fragment {
                 LinearLayoutManager.VERTICAL,false);
         movie_list.setLayoutManager(linearLayoutManager);
         movie_list.setItemAnimator(new DefaultItemAnimator());
+        movie_list.setNestedScrollingEnabled(false);
         movie_list.setAdapter(movieListAdapter);
+        movie_list.hasFixedSize();
 
         prepareMovieData();
 
@@ -58,21 +56,18 @@ public class NowShowingFragment extends Fragment {
     private void prepareMovieData() {
 
         MovieListModel movieListModel = new MovieListModel("Zootopia","Animation | Action | Adventure",
-                "8.2/10","EN","In a city of animals, a rockie bunny cop and a cynical con artist fox must work together to uncover a...",
+                "8.2","EN","In a city of animals, a rockie bunny cop and a cynical con artist fox must work together to uncover a...",
                 "","107 min","17 June 2016(USA)",R.drawable.zootopia);
-
         movieListModelList.add(movieListModel);
 
         movieListModel = new MovieListModel("Zootopia","Animation | Action | Adventure",
-                "8.2/10","EN","In a city of animals, a rockie bunny cop and a cynical con artist fox must work together to uncover a...",
+                "8.2","EN","In a city of animals, a rockie bunny cop and a cynical con artist fox must work together to uncover a...",
                 "","107 min","17 June 2016(USA)",R.drawable.zootopia);
-
         movieListModelList.add(movieListModel);
 
         movieListModel = new MovieListModel("Zootopia","Animation | Action | Adventure",
-                "8.2/10","EN","In a city of animals, a rockie bunny cop and a cynical con artist fox must work together to uncover a...",
+                "8.2","EN","In a city of animals, a rockie bunny cop and a cynical con artist fox must work together to uncover a...",
                 "","107 min","17 June 2016(USA)",R.drawable.zootopia);
-
         movieListModelList.add(movieListModel);
 
         movieListAdapter.notifyDataSetChanged();
