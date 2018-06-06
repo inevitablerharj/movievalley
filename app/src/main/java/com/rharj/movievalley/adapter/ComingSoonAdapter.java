@@ -7,10 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 import com.rharj.movievalley.R;
 import com.rharj.movievalley.model.ComingSoonModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -55,6 +54,6 @@ public class ComingSoonAdapter extends RecyclerView.Adapter<ComingSoonAdapter.My
         final ComingSoonModel movieListModel = comingSoonModelList.get(position);
         holder.movie_title.setText(movieListModel.getMovieName());
         holder.movie_category.setText(movieListModel.getMovieCategory());
-        Glide.with(context).load(movieListModel.getMovieImage()).into(holder.movie_image);
+        Picasso.with(context).load(movieListModel.getMovieImage()).into(holder.movie_image);
     }
 }

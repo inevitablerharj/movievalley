@@ -7,10 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 import com.rharj.movievalley.R;
 import com.rharj.movievalley.model.MovieListModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -68,6 +67,6 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         holder.movie_rating.setText(movieListModel.getRating());
         holder.movie_category.setText(movieListModel.getCategory());
         holder.movie_language.setText(movieListModel.getLanguage());
-        Glide.with(context).load(movieListModel.getImageUrl()).into(holder.movie_image);
+        Picasso.with(context).load(movieListModel.getImageUrl()).into(holder.movie_image);
     }
 }
