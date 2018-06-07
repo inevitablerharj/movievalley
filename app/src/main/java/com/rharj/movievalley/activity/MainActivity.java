@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.rharj.movievalley.R;
+import com.rharj.movievalley.fragment.CinemaListFragment;
 import com.rharj.movievalley.fragment.ComingSoonFragment;
 import com.rharj.movievalley.fragment.NowShowingFragment;
 import com.rharj.movievalley.utility.BottomNavigationBehaviour;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_notifications:
+                    fragment = new CinemaListFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_profile:
                     return true;

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:padding="16dp"
+    android:layout_height="wrap_content">
+
+        <com.rharj.movievalley.custom.CustomTextViewMedium
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silverbird Cinemas"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:id="@+id/cinemaName"/>
+
+        <com.rharj.movievalley.custom.CustomTextViewLight
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silverbird Galleria, 133, Ahmadu Bello way, VI, Lagos"
+            android:textSize="12sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="false"
+            android:layout_below="@id/cinemaName"
+            android:textColor="@color/app_grays"
+            android:layout_marginTop="2dp"
+            android:id="@+id/cinema_address"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:clickable="true"
+            android:id="@+id/overflow"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_more_vert_black_24dp"/>
+
+</RelativeLayout>
