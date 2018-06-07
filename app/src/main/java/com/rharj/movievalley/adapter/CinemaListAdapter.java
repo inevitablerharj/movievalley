@@ -3,10 +3,13 @@ package com.rharj.movievalley.adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rharj.movievalley.R;
 import com.rharj.movievalley.model.CinemaListModel;
@@ -50,14 +53,25 @@ public class CinemaListAdapter extends RecyclerView.Adapter<CinemaListAdapter.My
     }
 
     @Override
-    public void onBindViewHolder(CinemaListAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(final CinemaListAdapter.MyViewHolder holder, final int position) {
         final CinemaListModel cinemaListModel = cinemaListModelList.get(position);
         holder.cinemaName.setText(cinemaListModel.getCinemaName());
         holder.cinema_address.setText(cinemaListModel.getCinemaAddress());
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final PopupMenu popupMenu = new PopupMenu(context,holder.overflow);
+                popupMenu.getMenuInflater().inflate(R.menu.popup_menu,popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Toast.makeText(context,"You Clicked : " + position,
+                                Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
+                });
 
+                popupMenu.show();
             }
         });
     }

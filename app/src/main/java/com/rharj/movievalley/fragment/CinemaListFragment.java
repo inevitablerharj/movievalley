@@ -63,7 +63,7 @@ public class CinemaListFragment extends Fragment {
         cinemaListModelList.add(cinemaListModel);
 
         cinemaListModel = new CinemaListModel("Filmhouse Cinema",
-                "Filmhouse Surulere, Leisure Mall, Adeniran Sreet, Surulere, Lagos");
+                "Filmhouse Leisure Mall, Adeniran Sreet, Surulere, Lagos");
         cinemaListModelList.add(cinemaListModel);
 
         cinemaListModel = new CinemaListModel("Ozone Galleria",
