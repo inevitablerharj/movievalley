@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="parallax"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/cover_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"
+                android:src="@drawable/zootopia_full"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/movie_top_details"
+                android:orientation="vertical">
+
+                    <com.rharj.movievalley.custom.CustomTextViewMedium
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zootopia"
+                        android:textSize="25sp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/movie_name"/>
+
+                    <com.rharj.movievalley.custom.CustomTextViewLight
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Action | Drama | Adventure"
+                        android:textSize="12sp"
+                        android:textColor="@color/app_grays"
+                        android:id="@+id/movie_category"/>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:id="@+id/rating_container"
+                            android:layout_marginRight="10dp"
+                            android:layout_height="wrap_content">
+
+                            <com.rharj.movievalley.custom.CustomTextViewMedium
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/movie_rating"
+                                android:textSize="15dp"
+                                android:textColor="@android:color/black"
+                                android:text="8.2"/>
+
+                            <com.rharj.movievalley.custom.CustomTextViewLight
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/movie_rating"
+                                android:textSize="10dp"
+                                android:layout_marginTop="@dimen/dp10"
+                                android:textColor="@color/app_grays"
+                                android:text="/10"/>
+                        </RelativeLayout>
+
+                        <com.rharj.movievalley.custom.CustomTextViewLight
+                            android:id="@+id/movie_3d"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_toRightOf="@id/rating_container"
+                            android:background="@drawable/drawable_round_dark_pink"
+                            android:text="3D"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
+
+                        <com.rharj.movievalley.custom.CustomTextViewLight
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2D"
+                            android:id="@+id/movie_2d"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_toRightOf="@id/movie_3d"
+                            android:textSize="10dp"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/drawable_round_grey"/>
+
+                        <com.rharj.movievalley.custom.CustomTextViewLight
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="EN"
+                            android:id="@+id/movie_language"
+                            android:layout_marginTop="3dp"
+                            android:layout_toRightOf="@id/movie_2d"
+                            android:textSize="10sp"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/drawable_round_pink"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp">
+
+                        <com.rharj.movievalley.custom.CustomTextViewLight
+                            android:id="@+id/movie_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:drawableLeft="@drawable/ic_baseline_access_time_24px"
+                            android:drawablePadding="2dp"
+                            android:text="107 min"
+                            android:textColor="@color/app_grays"
+                            android:textSize="11sp" />
+
+                        <com.rharj.movievalley.custom.CustomTextViewLight
+                            android:id="@+id/movie_release_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_toRightOf="@id/movie_time"
+                            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+                            android:drawablePadding="4dp"
+                            android:text="17 June 2016(USA)"
+                            android:textColor="@color/app_grays"
+                            android:textSize="11sp" />
+
+                    </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:id="@+id/details_page"
+                android:layout_below="@id/movie_top_details"
+                android:orientation="vertical">
+
+                <com.rharj.movievalley.custom.CustomExapndableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/movie_details"
+                    android:textColor="@color/app_grays"
+                    android:textSize="13sp"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    app:animation_duration="750"
+                    android:layout_marginTop="6dp"
+                    android:text="In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy."/>
+
+                <com.rharj.movievalley.custom.CustomTextViewMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="see more"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/see_more"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/details_page"
+                android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.rharj.movievalley.custom.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Director:"
+                            android:layout_marginRight="5dp"
+                            android:id="@+id/director"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"/>
+
+                        <com.rharj.movievalley.custom.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/director"
+                            android:text=" Rawson Marshall Thurber"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:singleLine="false"
+                            android:id="@+id/director_val"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/app_grays"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.rharj.movievalley.custom.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/writers"
+                            android:layout_marginRight="5dp"
+                            android:id="@+id/writer"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"/>
+
+                        <com.rharj.movievalley.custom.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/writer"
+                            android:text="  Ike Barinholtz(Screenplay), David Stassen"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:singleLine="false"
+                            android:id="@+id/writer_val"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/app_grays"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.rharj.movievalley.custom.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Actors:"
+                            android:layout_marginRight="5dp"
+                            android:id="@+id/actors"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"/>
+
+                        <com.rharj.movievalley.custom.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:layout_toRightOf="@id/actors"
+                            android:text="   Dwayne Johnson, Kevin Hart, Danielle Nicolet"
+                            android:id="@+id/actors_val"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/app_grays"/>
+
+                    </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_play_arrow_black_24dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|right|end" />
+
+
+</android.support.design.widget.CoordinatorLayout>

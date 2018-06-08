@@ -1,6 +1,8 @@
 package com.rharj.movievalley.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.rharj.movievalley.R;
 import com.rharj.movievalley.model.MovieListModel;
+import com.rharj.movievalley.utility.Navigator;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -23,6 +26,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         public ImageView movie_image;
         public TextView movie_title,movie_category,movie_rating,movie_3d,movie_2d,movie_language
                 ,movie_details,movie_time,movie_release_date;
+        public CardView card;
         public MyViewHolder(View view) {
             super(view);
 
@@ -36,6 +40,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
             movie_details = (TextView) view.findViewById(R.id.movie_details);
             movie_time = (TextView) view.findViewById(R.id.movie_time);
             movie_release_date = (TextView) view.findViewById(R.id.movie_release_date);
+            card = (CardView) view.findViewById(R.id.card);
         }
     }
 
@@ -68,5 +73,11 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         holder.movie_category.setText(movieListModel.getCategory());
         holder.movie_language.setText(movieListModel.getLanguage());
         Picasso.with(context).load(movieListModel.getImageUrl()).into(holder.movie_image);
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Navigator((Activity)context).navigateToMovieDetailsActivity();
+            }
+        });
     }
 }
