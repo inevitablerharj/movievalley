@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:elevation="3dp"
+        android:clickable="true"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zootopia"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:id="@+id/coming_soon_image"/>
+
+            <com.rharj.movievalley.custom.CustomTextViewRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shape Of Water"
+                android:layout_centerInParent="true"
+                android:textSize="14sp"
+                android:singleLine="false"
+                android:maxLines="2"
+                android:layout_below="@id/coming_soon_image"
+                android:textColor="@android:color/black"
+                android:id="@+id/movie_title"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"/>
+
+            <com.rharj.movievalley.custom.CustomTextViewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adventure| Action"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:textSize="10sp"
+                android:ellipsize="end"
+                android:layout_below="@id/movie_title"
+                android:textColor="@color/app_grays"
+                android:id="@+id/movie_category"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

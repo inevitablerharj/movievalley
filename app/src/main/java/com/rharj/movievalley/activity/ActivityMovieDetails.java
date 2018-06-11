@@ -7,19 +7,33 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 
 import com.rharj.movievalley.R;
+import com.rharj.movievalley.adapter.ComingSoonAdapter;
+import com.rharj.movievalley.adapter.OtherMovieShowingAdapter;
+import com.rharj.movievalley.model.ComingSoonModel;
 import com.rharj.movievalley.model.MovieListModel;
 import com.rharj.movievalley.utility.Navigator;
+import com.rharj.movievalley.utility.RecyclerViewMargin;
 import com.rharj.movievalley.utility.Utils;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ActivityMovieDetails extends AppCompatActivity {
 
     private CollapsingToolbarLayout collapsingToolbarLayout;
+    RecyclerView other_movies;
+    private OtherMovieShowingAdapter otherMovieShowingAdapter;
+    List<ComingSoonModel> comingSoonModelList = new ArrayList<>();
     Toolbar toolbar;
     ActionBar actionBar;
     ImageView cover_image;
@@ -83,5 +97,58 @@ public class ActivityMovieDetails extends AppCompatActivity {
                         supportStartPostponedEnterTransition();
                     }
                 });
+
+        other_movies = (RecyclerView) findViewById(R.id.other_movies);
+        otherMovieShowingAdapter = new OtherMovieShowingAdapter(comingSoonModelList,ActivityMovieDetails.this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ActivityMovieDetails.this,
+                LinearLayoutManager.HORIZONTAL,false);
+        other_movies.setLayoutManager(linearLayoutManager);
+        RecyclerViewMargin decoration = new RecyclerViewMargin(15, 10);
+        other_movies.addItemDecoration(decoration);
+        other_movies.setNestedScrollingEnabled(false);
+        other_movies.setAdapter(otherMovieShowingAdapter);
+        other_movies.hasFixedSize();
+
+        prepareMovieData();
+    }
+
+    private void prepareMovieData() {
+        ComingSoonModel comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "Avengers","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "Black Panther","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "Dark Waters","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "Shape Of Water","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "Tomb Raider","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "Shape Of Water","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "The Prestige","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "Infinity War","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        comingSoonModel = new ComingSoonModel(R.drawable.zootopia,
+                "Iron Man","Animation | Action");
+        comingSoonModelList.add(comingSoonModel);
+
+        otherMovieShowingAdapter.notifyDataSetChanged();
     }
 }

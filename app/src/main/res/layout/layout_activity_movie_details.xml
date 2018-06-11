@@ -48,11 +48,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
+        android:background="@android:color/transparent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:padding="16dp"
+            android:padding="5dp"
             android:layout_height="match_parent">
 
             <LinearLayout
@@ -202,6 +203,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/movie_directors"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/details_page"
                 android:orientation="vertical">
@@ -290,6 +292,28 @@
                             android:textColor="@color/app_grays"/>
 
                     </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/movie_directors"
+                android:orientation="vertical">
+
+                <com.rharj.movievalley.custom.CustomTextViewMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_movies_showing_in_the_cinema"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:clipToPadding="false"
+                    android:id="@+id/other_movies"></android.support.v7.widget.RecyclerView>
             </LinearLayout>
         </RelativeLayout>
 

@@ -7,7 +7,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/dp3"
+        android:elevation="3dp"
         android:clickable="true"
         android:padding="15dp"
         app:cardCornerRadius="5dp"
