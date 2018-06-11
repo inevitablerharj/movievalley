@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <com.rharj.movievalley.custom.CustomTextViewMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cinema_name"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_alignParentLeft="true"
+                    android:text="Silverbird Cinema"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"/>
+
+                <com.rharj.movievalley.custom.CustomTextViewMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/show_time"
+                    android:singleLine="false"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_below="@id/cinema_name"
+                    android:layout_alignParentLeft="true"
+                    android:text="Silverbird Cinema"
+                    android:textColor="@color/app_grays"
+                    android:textSize="12sp"/>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:id="@+id/get_directions"
+                    android:src="@drawable/ic_more_vert_black_24dp"/>
+        </RelativeLayout>
+
+</RelativeLayout>

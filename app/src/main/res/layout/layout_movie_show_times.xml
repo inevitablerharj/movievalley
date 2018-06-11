@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:id="@+id/top_bar"
+        android:background="@color/colorPrimary">
+
+        <com.rharj.movievalley.custom.CustomTextViewMedium
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="View Showtimes"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp16"
+            android:layout_alignParentLeft="true"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/close_button"
+            android:padding="@dimen/dp5"
+            android:clickable="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_close_black_24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/top_bar"
+        android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:id="@+id/show_times"></android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+</RelativeLayout>

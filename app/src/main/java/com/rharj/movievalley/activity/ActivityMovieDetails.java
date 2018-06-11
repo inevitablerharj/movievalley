@@ -1,22 +1,25 @@
 package com.rharj.movievalley.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.rharj.movievalley.R;
-import com.rharj.movievalley.adapter.ComingSoonAdapter;
 import com.rharj.movievalley.adapter.OtherMovieShowingAdapter;
+import com.rharj.movievalley.fragment.ShowTimesFragment;
 import com.rharj.movievalley.model.ComingSoonModel;
 import com.rharj.movievalley.model.MovieListModel;
 import com.rharj.movievalley.utility.Navigator;
@@ -32,11 +35,18 @@ public class ActivityMovieDetails extends AppCompatActivity {
 
     private CollapsingToolbarLayout collapsingToolbarLayout;
     RecyclerView other_movies;
+
     private OtherMovieShowingAdapter otherMovieShowingAdapter;
+
     List<ComingSoonModel> comingSoonModelList = new ArrayList<>();
+
+    FloatingActionButton fab;
     Toolbar toolbar;
     ActionBar actionBar;
     ImageView cover_image;
+    TextView showtimes_movie;
+
+    ShowTimesFragment showTimesFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -98,10 +108,30 @@ public class ActivityMovieDetails extends AppCompatActivity {
                     }
                 });
 
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.youtube.com/watch?v=jWM0ct-OLsM")));
+            }
+        });
+
+        showtimes_movie = (TextView) findViewById(R.id.showtimes_movie);
+        showtimes_movie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showTimesFragment = ShowTimesFragment.getInstance();
+                showTimesFragment.show(ActivityMovieDetails.this.getSupportFragmentManager(),
+                        "Edit Profile");
+            }
+        });
+
         other_movies = (RecyclerView) findViewById(R.id.other_movies);
-        otherMovieShowingAdapter = new OtherMovieShowingAdapter(comingSoonModelList,ActivityMovieDetails.this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ActivityMovieDetails.this,
-                LinearLayoutManager.HORIZONTAL,false);
+        otherMovieShowingAdapter = new OtherMovieShowingAdapter(comingSoonModelList,
+                ActivityMovieDetails.this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
+                ActivityMovieDetails.this, LinearLayoutManager.HORIZONTAL,false);
         other_movies.setLayoutManager(linearLayoutManager);
         RecyclerViewMargin decoration = new RecyclerViewMargin(15, 10);
         other_movies.addItemDecoration(decoration);
