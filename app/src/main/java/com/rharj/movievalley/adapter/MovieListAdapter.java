@@ -2,6 +2,7 @@ package com.rharj.movievalley.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -63,7 +64,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
     }
 
     @Override
-    public void onBindViewHolder(MovieListAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MovieListAdapter.MyViewHolder holder, int position) {
         final MovieListModel movieListModel = movieListModelList.get(position);
         holder.movie_title.setText(movieListModel.getTitle());
         holder.movie_release_date.setText(movieListModel.getReleaseDate());
@@ -73,10 +74,13 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         holder.movie_category.setText(movieListModel.getCategory());
         holder.movie_language.setText(movieListModel.getLanguage());
         Picasso.with(context).load(movieListModel.getImageUrl()).into(holder.movie_image);
+        ViewCompat.setTransitionName(holder.movie_image, movieListModel.getTitle());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Navigator((Activity)context).navigateToMovieDetailsActivity();
+
+                new Navigator((Activity)context).navigateToMovieDetailsActivity(movieListModel,
+                        holder.movie_image);
             }
         });
     }

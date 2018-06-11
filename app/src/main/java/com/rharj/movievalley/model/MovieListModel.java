@@ -1,6 +1,11 @@
 package com.rharj.movievalley.model;
 
-public class MovieListModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class MovieListModel implements Serializable {
 
     private String title;
     private String category;
